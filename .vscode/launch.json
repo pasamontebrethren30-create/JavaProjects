@@ -1,0 +1,301 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "AdditionProgram",
+            "request": "launch",
+            "mainClass": "AdditionProgram",
+            "projectName": "MyProjects_55703f84"
+        },
+        {
+            "type": "java",
+            "name": "ClickSpeedTestApp",
+            "request": "launch",
+            "mainClass": "ClickSpeedTestApp",
+            "projectName": "MyProjects_55703f84"
+        },
+        {
+            "type": "java",
+            "name": "AndOrNotSimple",
+            "request": "launch",
+            "mainClass": "AndOrNotSimple",
+            "projectName": "MyProjects_55703f84"
+        },
+        {
+            "type": "java",
+            "name": "ANDORNOT",
+            "request": "launch",
+            "mainClass": "ANDORNOT",
+            "projectName": "MyProjects_55703f84"
+        },
+        {
+            "type": "java",
+            "name": "StudentProfile",
+            "request": "launch",
+            "mainClass": "StudentProfile",
+            "projectName": "MyProjects_55703f84"
+        },
+        {
+            "type": "java",
+            "name": "StudentInformationUI",
+            "request": "launch",
+            "mainClass": "StudentInformationUI",
+            "projectName": "MyProjects_55703f84"
+        },
+        {
+            "type": "java",
+            "name": "BugFix",
+            "request": "launch",
+            "mainClass": "BugFix",
+            "projectName": "MyProjects_55703f84"
+        },
+        {
+            "type": "java",
+            "name": "StudentInformationUI",
+            "request": "launch",
+            "mainClass": "StudentInformationUI",
+            "projectName": "MyProjects_90b9ea39"
+        },
+        {
+            "type": "java",
+            "name": "StudentProfile",
+            "request": "launch",
+            "mainClass": "StudentProfile",
+            "projectName": "MyProjects_90b9ea39"
+        },
+        {
+            "type": "java",
+            "name": "FriendPrank",
+            "request": "launch",
+            "mainClass": "FriendPrank",
+            "projectName": "MyProjects_90b9ea39"
+        },
+        {
+            "type": "java",
+            "name": "StudentInformation",
+            "request": "launch",
+            "mainClass": "StudentInformation",
+            "projectName": "MyProjects_90b9ea39"
+        },
+        {
+            "type": "java",
+            "name": "SimpleCalculator",
+            "request": "launch",
+            "mainClass": "SimpleCalculator",
+            "projectName": "MyProjects_90b9ea39"
+        },
+        {
+            "type": "java",
+            "name": "MadLibsGame",
+            "request": "launch",
+            "mainClass": "MadLibsGame",
+            "projectName": "MyProjects_90b9ea39"
+        },
+        {
+            "type": "java",
+            "name": "GradeTracker",
+            "request": "launch",
+            "mainClass": "GradeTracker",
+            "projectName": "MyProjects_90b9ea39"
+        },
+        {
+            "type": "java",
+            "name": "Launch ValentineLetterApp",
+            "request": "launch",
+            "mainClass": "ValentineLetterApp",
+            "vmArgs": "--module-path \"C:/Users/Brethren Pasamonte/Downloads/openjfx-26.0.1_windows-x64_bin-sdk/javafx-sdk-26.0.1/lib\" --add-modules javafx.controls --enable-native-access=javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "OmniAnswer",
+            "request": "launch",
+            "mainClass": "OmniAnswer",
+            "projectName": "MyProjects_90b9ea39"
+        },
+        {
+            "type": "java",
+            "name": "HardcoreDatabase",
+            "request": "launch",
+            "mainClass": "HardcoreDatabase",
+            "projectName": "MyProjects_90b9ea39"
+        },
+        {
+            "type": "java",
+            "name": "ClickSpeedTestApp",
+            "request": "launch",
+            "mainClass": "ClickSpeedTestApp",
+            "projectName": "MyProjects_90b9ea39"
+        },
+        {
+            "type": "java",
+            "name": "WordScramble",
+            "request": "launch",
+            "mainClass": "WordScramble",
+            "projectName": "MyProjects_90b9ea39"
+        },
+        {
+            "type": "java",
+            "name": "BugFixDate",
+            "request": "launch",
+            "mainClass": "BugFixDate",
+            "projectName": "MyProjects_90b9ea39"
+        },
+        {
+            "type": "java",
+            "name": "PerfectMatchGame",
+            "request": "launch",
+            "mainClass": "PerfectMatchGame",
+            "projectName": "MyProjects_90b9ea39"
+        },
+        {
+            "type": "java",
+            "name": "TerminalSurprise",
+            "request": "launch",
+            "mainClass": "TerminalSurprise",
+            "projectName": "MyProjects_90b9ea39"
+        },
+        {
+            "type": "java",
+            "name": "OurRelationship",
+            "request": "launch",
+            "mainClass": "OurRelationship",
+            "projectName": "MyProjects_90b9ea39"
+        },
+        {
+            "type": "java",
+            "name": "CurrencyConverter",
+            "request": "launch",
+            "mainClass": "CurrencyConverter",
+            "projectName": "MyProjects_90b9ea39"
+        },
+        {
+            "type": "java",
+            "name": "SmileProject",
+            "request": "launch",
+            "mainClass": "SmileProject",
+            "projectName": "MyProjects_90b9ea39"
+        },
+        {
+            "type": "java",
+            "name": "CrushProposal",
+            "request": "launch",
+            "mainClass": "CrushProposal",
+            "projectName": "MyProjects_90b9ea39"
+        },
+        {
+            "type": "java",
+            "name": "AdditionProgram",
+            "request": "launch",
+            "mainClass": "AdditionProgram",
+            "projectName": "MyProjects_90b9ea39"
+        },
+        {
+            "type": "java",
+            "name": "HiCrush",
+            "request": "launch",
+            "mainClass": "HiCrush",
+            "projectName": "MyProjects_90b9ea39"
+        },
+        {
+            "type": "java",
+            "name": "SmileProject2",
+            "request": "launch",
+            "mainClass": "SmileProject2",
+            "projectName": "MyFirstApp_ab79c310"
+        },
+        {
+            "type": "java",
+            "name": "FriendPrank",
+            "request": "launch",
+            "mainClass": "FriendPrank",
+            "projectName": "MyFirstApp_ab79c310"
+        },
+        {
+            "type": "java",
+            "name": "SimpleGame",
+            "request": "launch",
+            "mainClass": "SimpleGame",
+            "projectName": "MyFirstApp_ab79c310"
+        },
+        {
+            "type": "java",
+            "name": "WeddingToast",
+            "request": "launch",
+            "mainClass": "WeddingToast",
+            "projectName": "MyFirstApp_ab79c310"
+        },
+        {
+            "type": "java",
+            "name": "SmileProject",
+            "request": "launch",
+            "mainClass": "SmileProject",
+            "projectName": "MyFirstApp_ab79c310"
+        },
+        {
+            "type": "java",
+            "name": "TodoList",
+            "request": "launch",
+            "mainClass": "TodoList",
+            "projectName": "MyFirstApp_ab79c310"
+        },
+        {
+            "type": "java",
+            "name": "GradeTracker",
+            "request": "launch",
+            "mainClass": "GradeTracker",
+            "projectName": "MyFirstApp_ab79c310"
+        },
+        {
+            "type": "java",
+            "name": "SimpleATMSimulator",
+            "request": "launch",
+            "mainClass": "SimpleATMSimulator",
+            "projectName": "MyFirstApp_ab79c310"
+        },
+        {
+            "type": "java",
+            "name": "SimpleAtmSimulator",
+            "request": "launch",
+            "mainClass": "SimpleAtmSimulator",
+            "projectName": "MyFirstApp_ab79c310"
+        },
+        {
+            "type": "java",
+            "name": "AtmSimulator",
+            "request": "launch",
+            "mainClass": "AtmSimulator",
+            "projectName": "MyFirstApp_ab79c310"
+        },
+        {
+            "type": "java",
+            "name": "GuessingGame",
+            "request": "launch",
+            "mainClass": "GuessingGame",
+            "projectName": "MyFirstApp_ab79c310"
+        },
+        {
+            "type": "java",
+            "name": "SimpleCalculator",
+            "request": "launch",
+            "mainClass": "SimpleCalculator",
+            "projectName": "MyFirstApp_ab79c310"
+        },
+        {
+            "type": "java",
+            "name": "AdditionProgram",
+            "request": "launch",
+            "mainClass": "AdditionProgram",
+            "projectName": "MyFirstApp_ab79c310"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        }
+    ]
+}
