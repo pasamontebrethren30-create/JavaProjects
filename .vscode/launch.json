@@ -9,6 +9,20 @@
             "name": "AdditionProgram",
             "request": "launch",
             "mainClass": "AdditionProgram",
+            "projectName": "JavaProjects_4661b547"
+        },
+        {
+            "type": "java",
+            "name": "ClickSpeedTestApp",
+            "request": "launch",
+            "mainClass": "ClickSpeedTestApp",
+            "projectName": "JavaProjects_4661b547"
+        },
+        {
+            "type": "java",
+            "name": "AdditionProgram",
+            "request": "launch",
+            "mainClass": "AdditionProgram",
             "projectName": "MyProjects_55703f84"
         },
         {

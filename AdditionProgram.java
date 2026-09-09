@@ -9,8 +9,11 @@ public class AdditionProgram {
 
         System.out.print("Enter the second number: ");
         int number2 = input.nextInt();
-
-        int total = number1 + number2;
+        
+        System.out.print("Enter the third number: ");
+        int number3 = input.nextInt();
+        
+        int total = number1 + number2 + number3;
 
         System.out.println("The total is: " + total);
 
