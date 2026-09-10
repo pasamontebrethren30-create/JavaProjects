@@ -13,7 +13,10 @@ public class AdditionProgram {
         System.out.print("Enter the third number: ");
         int number3 = input.nextInt();
         
-        int total = number1 + number2 + number3;
+        System.out.print("Enter the fourth number: ");
+        int number4 = input.nextInt();
+
+        int total = number1 + number2 + number3 + number4;
 
         System.out.println("The total is: " + total);
 
