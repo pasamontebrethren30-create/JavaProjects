@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "StudentInformationUI",
+            "request": "launch",
+            "mainClass": "StudentInformationUI",
+            "projectName": "JavaProjects_4661b547"
+        },
+        {
+            "type": "java",
+            "name": "StudentManagementSystem",
+            "request": "launch",
+            "mainClass": "StudentManagementSystem",
+            "projectName": "JavaProjects_4661b547"
+        },
+        {
+            "type": "java",
+            "name": "LogicVaultRPG",
+            "request": "launch",
+            "mainClass": "LogicVaultRPG",
+            "projectName": "JavaProjects_4661b547"
+        },
+        {
+            "type": "java",
+            "name": "LogicVaultGame",
+            "request": "launch",
+            "mainClass": "LogicVaultGame",
+            "projectName": "JavaProjects_4661b547"
+        },
+        {
+            "type": "java",
+            "name": "AndOrNotSimple",
+            "request": "launch",
+            "mainClass": "AndOrNotSimple",
+            "projectName": "JavaProjects_4661b547"
+        },
+        {
+            "type": "java",
             "name": "AdditionProgram",
             "request": "launch",
             "mainClass": "AdditionProgram",
