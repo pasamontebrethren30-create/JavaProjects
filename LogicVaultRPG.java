@@ -1,6 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 import java.util.Random;
 
 public class LogicVaultRPG extends JFrame {
@@ -155,17 +154,14 @@ public class LogicVaultRPG extends JFrame {
     private boolean enemyCasting = false;
 
     private int attackFrame = 0;
-    private int magicFrame = 0;
 
     private int enemyAttackFrame = 0;
-    private int enemyMagicFrame = 0;
 
     // =========================================================
     // GAME
     // =========================================================
 
     private boolean enemyDefeated = false;
-    private boolean gameStarted = false;
 
     private String message =
         "Welcome to the Logic Vault!";
@@ -416,8 +412,6 @@ public class LogicVaultRPG extends JFrame {
         hasWeapon = true;
         hasMagicGem = false;
         cursed = false;
-
-        gameStarted = true;
 
         loadLevel();
 
@@ -781,8 +775,6 @@ public class LogicVaultRPG extends JFrame {
 
         casting = true;
 
-        magicFrame = 0;
-
         playerProjectileX =
             playerX + 50;
 
@@ -805,8 +797,6 @@ public class LogicVaultRPG extends JFrame {
             e -> {
 
                 playerProjectileX += 15;
-
-                magicFrame++;
 
                 if (playerProjectileX >= enemyX) {
 
@@ -1157,8 +1147,6 @@ public class LogicVaultRPG extends JFrame {
 
         enemyCasting = true;
 
-        enemyMagicFrame = 0;
-
         Timer timer =
             new Timer(30, null);
 
@@ -1166,8 +1154,6 @@ public class LogicVaultRPG extends JFrame {
             e -> {
 
                 enemyProjectileX -= 15;
-
-                enemyMagicFrame++;
 
                 if (enemyProjectileX <= playerX + 40) {
 
@@ -2620,12 +2606,24 @@ public class LogicVaultRPG extends JFrame {
                 new BasicStroke(3)
             );
 
-            g2.drawLine(
-                x - 50,
-                y - 20,
-                x - 10,
-                y - 20
-            );
+            if (enemyAimingLeft) {
+
+                g2.drawLine(
+                    x - 50,
+                    y - 20,
+                    x - 10,
+                    y - 20
+                );
+
+            } else {
+
+                g2.drawLine(
+                    x + 10,
+                    y - 20,
+                    x + 50,
+                    y - 20
+                );
+            }
 
             // Enemy name
             g2.setColor(
