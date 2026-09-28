@@ -9,7 +9,7 @@ public class StudentManagementSystem {
 
         // OUTER LOOP: Keeps the application running until the user chooses to exit
         while (true) {
-            System.out.println("\n--- MAIN MENU ---");
+            System.out.println("\n MAIN MENU ");
             System.out.println("1. Grade Evaluator & Classification");
             System.out.println("2. Multi-Subject Average Calculator");
             System.out.println("3. Display Grading Scale Info");
@@ -27,7 +27,7 @@ public class StudentManagementSystem {
             // SWITCH STATEMENT: Directs flow based on menu choice
             switch (mainChoice) {
                 case 1:
-                    System.out.println("\n>>> GRADE EVALUATOR <<<");
+                    System.out.println("\n GRADE EVALUATOR ");
                     System.out.print("Enter numerical grade (0-100): ");
                     
                     if (scanner.hasNextDouble()) {
@@ -52,7 +52,7 @@ public class StudentManagementSystem {
                     break; // BRANCHING STATEMENT: Exit switch block
 
                 case 2:
-                    System.out.println("\n>>> MULTI-SUBJECT AVERAGE CALCULATOR <<<");
+                    System.out.println("\n MULTI-SUBJECT AVERAGE CALCULATOR ");
                     System.out.print("How many subjects do you want to calculate? ");
                     
                     if (scanner.hasNextInt()) {
@@ -109,7 +109,7 @@ public class StudentManagementSystem {
                     break;
 
                 case 3:
-                    System.out.println("\n>>> GRADING SCALE INFORMATION <<<");
+                    System.out.println("\n GRADING SCALE INFORMATION ");
                     System.out.println("Grade Ranges:");
                     System.out.println("  90 - 100 : Excellent");
                     System.out.println("  80 - 89  : Very Good");
