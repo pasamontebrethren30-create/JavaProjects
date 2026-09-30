@@ -26,17 +26,14 @@ public class StudentManagementSystem extends JFrame {
         createMainUI();
     }
 
-    // ============================================================
     // MAIN UI
-    // ============================================================
 
     private void createMainUI() {
 
         JPanel mainPanel = new JPanel(new BorderLayout());
         mainPanel.setBackground(BACKGROUND);
 
-        // ---------------- SIDEBAR ----------------
-
+        // SIDEBAR 
         JPanel sidebar = new JPanel();
         sidebar.setPreferredSize(new Dimension(245, 650));
         sidebar.setBackground(new Color(17, 24, 39));
@@ -83,22 +80,17 @@ public class StudentManagementSystem extends JFrame {
 
         sidebar.add(exitButton);
 
-        // ---------------- CONTENT ----------------
-
+        // CONTENT 
         contentPanel = new JPanel(new BorderLayout());
         contentPanel.setBackground(BACKGROUND);
         contentPanel.setBorder(new EmptyBorder(35, 40, 35, 40));
 
         showDashboard();
 
-        // ---------------- BUTTON ACTIONS ----------------
-
+        // BUTTON ACTIONS 
         gradeButton.addActionListener(e -> showGradeEvaluator());
-
         averageButton.addActionListener(e -> showAverageCalculator());
-
         scaleButton.addActionListener(e -> showGradingScale());
-
         exitButton.addActionListener(e -> {
 
             // BRANCHING STATEMENT: return
@@ -121,10 +113,7 @@ public class StudentManagementSystem extends JFrame {
         setContentPane(mainPanel);
     }
 
-    // ============================================================
     // DASHBOARD
-    // ============================================================
-
     private void showDashboard() {
 
         contentPanel.removeAll();
@@ -202,9 +191,7 @@ public class StudentManagementSystem extends JFrame {
         refreshUI();
     }
 
-    // ============================================================
     // GRADE EVALUATOR
-    // ============================================================
 
     private void showGradeEvaluator() {
 
@@ -313,9 +300,7 @@ public class StudentManagementSystem extends JFrame {
         refreshUI();
     }
 
-    // ============================================================
     // AVERAGE CALCULATOR
-    // ============================================================
 
     private void showAverageCalculator() {
 
@@ -488,11 +473,8 @@ public class StudentManagementSystem extends JFrame {
 
         refreshUI();
     }
-
-    // ============================================================
+   
     // GRADING SCALE
-    // ============================================================
-
     private void showGradingScale() {
 
         contentPanel.removeAll();
@@ -530,10 +512,7 @@ public class StudentManagementSystem extends JFrame {
 
         refreshUI();
     }
-
-    // ============================================================
     // UI COMPONENTS
-    // ============================================================
 
     private JButton createSidebarButton(String text) {
 
@@ -786,9 +765,7 @@ public class StudentManagementSystem extends JFrame {
         panel.add(descriptionLabel);
     }
 
-    // ============================================================
     // REFRESH UI
-    // ============================================================
 
     private void refreshUI() {
 
@@ -796,9 +773,7 @@ public class StudentManagementSystem extends JFrame {
         contentPanel.repaint();
     }
 
-    // ============================================================
     // MAIN METHOD
-    // ============================================================
 
     public static void main(String[] args) {
 
