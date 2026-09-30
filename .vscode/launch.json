@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "StudentProfile",
+            "request": "launch",
+            "mainClass": "StudentProfile",
+            "projectName": "JavaProjects_4661b547"
+        },
+        {
+            "type": "java",
             "name": "FINALS",
             "request": "launch",
             "mainClass": "FINALS",

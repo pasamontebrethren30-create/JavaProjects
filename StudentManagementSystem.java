@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class StudentManagementSystem extends JFrame {
 
-    // Modern colors
+    // Modern color palette
     private final Color BACKGROUND = new Color(245, 247, 250);
     private final Color CARD = Color.WHITE;
     private final Color PRIMARY = new Color(37, 99, 235);
@@ -15,8 +15,8 @@ public class StudentManagementSystem extends JFrame {
     private final Color BORDER = new Color(229, 231, 235);
 
     private JPanel contentPanel;
-    public StudentManagementSystem() {
 
+    public StudentManagementSystem() {
         setTitle("Student Management System");
         setSize(1000, 650);
         setMinimumSize(new Dimension(850, 550));
@@ -27,9 +27,7 @@ public class StudentManagementSystem extends JFrame {
     }
 
     // MAIN UI
-
     private void createMainUI() {
-
         JPanel mainPanel = new JPanel(new BorderLayout());
         mainPanel.setBackground(BACKGROUND);
 
@@ -92,8 +90,6 @@ public class StudentManagementSystem extends JFrame {
         averageButton.addActionListener(e -> showAverageCalculator());
         scaleButton.addActionListener(e -> showGradingScale());
         exitButton.addActionListener(e -> {
-
-            // BRANCHING STATEMENT: return
             int answer = JOptionPane.showConfirmDialog(
                     this,
                     "Are you sure you want to exit?",
@@ -102,7 +98,6 @@ public class StudentManagementSystem extends JFrame {
             );
 
             if (answer == JOptionPane.YES_OPTION) {
-                // Terminates the program
                 System.exit(0);
             }
         });
@@ -115,7 +110,6 @@ public class StudentManagementSystem extends JFrame {
 
     // DASHBOARD
     private void showDashboard() {
-
         contentPanel.removeAll();
 
         JPanel dashboard = new JPanel();
@@ -138,7 +132,6 @@ public class StudentManagementSystem extends JFrame {
         dashboard.add(Box.createVerticalStrut(30));
 
         // Statistics cards
-
         JPanel cards = new JPanel(new GridLayout(1, 3, 18, 0));
         cards.setOpaque(false);
 
@@ -161,7 +154,6 @@ public class StudentManagementSystem extends JFrame {
         ));
 
         dashboard.add(cards);
-
         dashboard.add(Box.createVerticalStrut(30));
 
         JPanel welcomeCard = createWhitePanel();
@@ -192,9 +184,7 @@ public class StudentManagementSystem extends JFrame {
     }
 
     // GRADE EVALUATOR
-
     private void showGradeEvaluator() {
-
         contentPanel.removeAll();
 
         JPanel panel = new JPanel();
@@ -240,56 +230,31 @@ public class StudentManagementSystem extends JFrame {
         card.add(resultLabel);
 
         evaluateButton.addActionListener(e -> {
-
             try {
+                double grade = Double.parseDouble(gradeField.getText());
 
-                double grade = Double.parseDouble(
-                        gradeField.getText()
-                );
-
-                // CONDITIONALS
                 if (grade < 0 || grade > 100) {
-
                     resultLabel.setForeground(DANGER);
                     resultLabel.setText(
                             "Invalid grade. Enter a value from 0 to 100."
                     );
-
                 } else if (grade >= 90) {
-
                     resultLabel.setForeground(SUCCESS);
-                    resultLabel.setText(
-                            "PASSED  |  Excellent (A)"
-                    );
-
+                    resultLabel.setText("PASSED  |  Excellent (A)");
                 } else if (grade >= 80) {
-
                     resultLabel.setForeground(SUCCESS);
-                    resultLabel.setText(
-                            "PASSED  |  Very Good (B)"
-                    );
-
+                    resultLabel.setText("PASSED  |  Very Good (B)");
                 } else if (grade >= 75) {
-
                     resultLabel.setForeground(SUCCESS);
-                    resultLabel.setText(
-                            "PASSED  |  Satisfactory (C)"
-                    );
-
+                    resultLabel.setText("PASSED  |  Satisfactory (C)");
                 } else {
-
                     resultLabel.setForeground(DANGER);
-                    resultLabel.setText(
-                            "FAILED  |  Needs Improvement (F)"
-                    );
+                    resultLabel.setText("FAILED  |  Needs Improvement (F)");
                 }
 
             } catch (NumberFormatException ex) {
-
                 resultLabel.setForeground(DANGER);
-                resultLabel.setText(
-                        "Invalid input. Please enter a number."
-                );
+                resultLabel.setText("Invalid input. Please enter a number.");
             }
         });
 
@@ -301,9 +266,7 @@ public class StudentManagementSystem extends JFrame {
     }
 
     // AVERAGE CALCULATOR
-
     private void showAverageCalculator() {
-
         contentPanel.removeAll();
 
         JPanel panel = new JPanel();
@@ -334,9 +297,7 @@ public class StudentManagementSystem extends JFrame {
 
         JTextField countField = createTextField();
 
-        JButton startButton = createPrimaryButton(
-                "Enter Subject Grades"
-        );
+        JButton startButton = createPrimaryButton("Enter Subject Grades");
 
         JTextArea resultArea = new JTextArea();
         resultArea.setEditable(false);
@@ -354,62 +315,40 @@ public class StudentManagementSystem extends JFrame {
         card.add(resultArea);
 
         startButton.addActionListener(e -> {
-
             try {
+                int subjectCount = Integer.parseInt(countField.getText());
 
-                int subjectCount = Integer.parseInt(
-                        countField.getText()
-                );
-
-                // CONDITIONAL
                 if (subjectCount <= 0) {
-
-                    resultArea.setText(
-                            "Subject count must be greater than zero."
-                    );
-
+                    resultArea.setText("Subject count must be greater than zero.");
                     return;
                 }
 
                 double total = 0;
                 int validCount = 0;
 
-                // LOOP
                 for (int i = 1; i <= subjectCount; i++) {
-
                     String input = JOptionPane.showInputDialog(
                             this,
-                            "Enter grade for Subject " + i +
-                                    " (0-100):",
+                            "Enter grade for Subject " + i + " (0-100):",
                             "Subject " + i,
                             JOptionPane.QUESTION_MESSAGE
                     );
 
-                    // BRANCHING: break
                     if (input == null) {
-
-                        resultArea.setText(
-                                "Calculation cancelled by user."
-                        );
-
+                        resultArea.setText("Calculation cancelled by user.");
                         break;
                     }
 
                     try {
+                        double subGrade = Double.parseDouble(input);
 
-                        double subGrade =
-                                Double.parseDouble(input);
-
-                        // BRANCHING: continue
                         if (subGrade < 0 || subGrade > 100) {
-
                             JOptionPane.showMessageDialog(
                                     this,
                                     "Invalid grade. Skipping this subject.",
                                     "Invalid Grade",
                                     JOptionPane.WARNING_MESSAGE
                             );
-
                             continue;
                         }
 
@@ -417,53 +356,33 @@ public class StudentManagementSystem extends JFrame {
                         validCount++;
 
                     } catch (NumberFormatException ex) {
-
                         JOptionPane.showMessageDialog(
                                 this,
                                 "Invalid number. This subject will be skipped.",
                                 "Invalid Input",
                                 JOptionPane.WARNING_MESSAGE
                         );
-
                         continue;
                     }
                 }
 
-                // CONDITIONAL
                 if (validCount > 0) {
-
                     double average = total / validCount;
-
-                    String status;
-
-                    if (average >= 75) {
-                        status = "PASSED";
-                    } else {
-                        status = "FAILED";
-                    }
+                    String status = (average >= 75) ? "PASSED" : "FAILED";
 
                     resultArea.setText(
                             "RESULT\n\n" +
                             "Valid Subjects: " + validCount + "\n" +
-                            String.format(
-                                    "Average Grade: %.2f%n",
-                                    average
-                            ) +
+                            String.format("Average Grade: %.2f%n", average) +
                             "Academic Status: " + status
                     );
 
                 } else {
-
-                    resultArea.setText(
-                            "No valid grades were entered."
-                    );
+                    resultArea.setText("No valid grades were entered.");
                 }
 
             } catch (NumberFormatException ex) {
-
-                resultArea.setText(
-                        "Invalid subject count. Please enter a number."
-                );
+                resultArea.setText("Invalid subject count. Please enter a number.");
             }
         });
 
@@ -473,10 +392,9 @@ public class StudentManagementSystem extends JFrame {
 
         refreshUI();
     }
-   
+
     // GRADING SCALE
     private void showGradingScale() {
-
         contentPanel.removeAll();
 
         JPanel panel = new JPanel();
@@ -487,9 +405,7 @@ public class StudentManagementSystem extends JFrame {
         title.setFont(new Font("Arial", Font.BOLD, 30));
         title.setForeground(TEXT);
 
-        JLabel subtitle = new JLabel(
-                "Reference guide for grade classification."
-        );
+        JLabel subtitle = new JLabel("Reference guide for grade classification.");
         subtitle.setFont(new Font("Arial", Font.PLAIN, 14));
         subtitle.setForeground(SECONDARY_TEXT);
 
@@ -512,111 +428,80 @@ public class StudentManagementSystem extends JFrame {
 
         refreshUI();
     }
-    // UI COMPONENTS
 
+    // UI COMPONENTS WITH LOOK AND FEEL OVERRIDE FIXES
     private JButton createSidebarButton(String text) {
-
         JButton button = new JButton(text);
 
-        button.setMaximumSize(new Dimension(
-                Integer.MAX_VALUE,
-                45
-        ));
-
+        button.setMaximumSize(new Dimension(Integer.MAX_VALUE, 45));
         button.setAlignmentX(Component.LEFT_ALIGNMENT);
-
         button.setHorizontalAlignment(SwingConstants.LEFT);
-
         button.setFont(new Font("Arial", Font.PLAIN, 14));
+        
+        // Ensure text is light gray/white on dark background
         button.setForeground(new Color(209, 213, 219));
-
         button.setBackground(new Color(17, 24, 39));
 
-        button.setBorder(
-                new EmptyBorder(10, 15, 10, 10)
-        );
+        // Forces solid background rendering under System L&F
+        button.setOpaque(true);
+        button.setContentAreaFilled(true);
+        button.setBorderPainted(false);
 
+        button.setBorder(new EmptyBorder(10, 15, 10, 10));
         button.setFocusPainted(false);
-        button.setCursor(
-                new Cursor(Cursor.HAND_CURSOR)
-        );
+        button.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
-        button.addMouseListener(
-                new java.awt.event.MouseAdapter() {
+        button.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent e) {
+                button.setBackground(new Color(31, 41, 55));
+            }
 
-                    @Override
-                    public void mouseEntered(
-                            java.awt.event.MouseEvent e) {
-
-                        button.setBackground(
-                                new Color(31, 41, 55)
-                        );
-                    }
-
-                    @Override
-                    public void mouseExited(
-                            java.awt.event.MouseEvent e) {
-
-                        button.setBackground(
-                                new Color(17, 24, 39)
-                        );
-                    }
-                }
-        );
+            @Override
+            public void mouseExited(java.awt.event.MouseEvent e) {
+                button.setBackground(new Color(17, 24, 39));
+            }
+        });
 
         return button;
     }
 
     private JButton createPrimaryButton(String text) {
-
         JButton button = new JButton(text);
 
-        button.setFont(
-                new Font("Arial", Font.BOLD, 14)
-        );
-
+        button.setFont(new Font("Arial", Font.BOLD, 14));
+        
+        // Explicit white text color on blue button
         button.setForeground(Color.WHITE);
         button.setBackground(PRIMARY);
 
-        button.setFocusPainted(false);
-        button.setBorder(
-                new EmptyBorder(12, 20, 12, 20)
-        );
+        // Forces solid background rendering under System L&F
+        button.setOpaque(true);
+        button.setContentAreaFilled(true);
+        button.setBorderPainted(false);
 
-        button.setCursor(
-                new Cursor(Cursor.HAND_CURSOR)
-        );
+        button.setFocusPainted(false);
+        button.setBorder(new EmptyBorder(12, 20, 12, 20));
+        button.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
         return button;
     }
 
     private JTextField createTextField() {
-
         JTextField field = new JTextField();
 
-        field.setFont(
-                new Font("Arial", Font.PLAIN, 15)
-        );
+        field.setFont(new Font("Arial", Font.PLAIN, 15));
+        
+        // Forces black text, black blinking cursor, and white background
+        field.setForeground(Color.BLACK);
+        field.setCaretColor(Color.BLACK);
+        field.setBackground(Color.WHITE);
 
-        field.setMaximumSize(
-                new Dimension(
-                        Integer.MAX_VALUE,
-                        45
-                )
-        );
-
+        field.setMaximumSize(new Dimension(Integer.MAX_VALUE, 45));
         field.setBorder(
                 BorderFactory.createCompoundBorder(
-                        BorderFactory.createLineBorder(
-                                BORDER,
-                                1
-                        ),
-                        new EmptyBorder(
-                                8,
-                                12,
-                                8,
-                                12
-                        )
+                        BorderFactory.createLineBorder(BORDER, 1),
+                        new EmptyBorder(8, 12, 8, 12)
                 )
         );
 
@@ -624,84 +509,33 @@ public class StudentManagementSystem extends JFrame {
     }
 
     private JPanel createWhitePanel() {
-
         JPanel panel = new JPanel();
-
         panel.setBackground(CARD);
-
         panel.setBorder(
                 BorderFactory.createCompoundBorder(
-                        BorderFactory.createLineBorder(
-                                BORDER
-                        ),
-                        new EmptyBorder(
-                                25,
-                                25,
-                                25,
-                                25
-                        )
+                        BorderFactory.createLineBorder(BORDER),
+                        new EmptyBorder(25, 25, 25, 25)
                 )
         );
-
         panel.setAlignmentX(Component.LEFT_ALIGNMENT);
-
         return panel;
     }
 
-    private JPanel createInfoCard(
-            String number,
-            String title,
-            String description
-    ) {
-
+    private JPanel createInfoCard(String number, String title, String description) {
         JPanel card = createWhitePanel();
-
-        card.setLayout(
-                new BoxLayout(
-                        card,
-                        BoxLayout.Y_AXIS
-                )
-        );
+        card.setLayout(new BoxLayout(card, BoxLayout.Y_AXIS));
 
         JLabel numberLabel = new JLabel(number);
-
-        numberLabel.setFont(
-                new Font(
-                        "Arial",
-                        Font.BOLD,
-                        24
-                )
-        );
-
+        numberLabel.setFont(new Font("Arial", Font.BOLD, 24));
         numberLabel.setForeground(PRIMARY);
 
         JLabel titleLabel = new JLabel(title);
-
-        titleLabel.setFont(
-                new Font(
-                        "Arial",
-                        Font.BOLD,
-                        16
-                )
-        );
-
+        titleLabel.setFont(new Font("Arial", Font.BOLD, 16));
         titleLabel.setForeground(TEXT);
 
-        JLabel descriptionLabel = new JLabel(
-                "<html>" + description + "</html>"
-        );
-
-        descriptionLabel.setFont(
-                new Font(
-                        "Arial",
-                        Font.PLAIN,
-                        12
-                )
-        );
-
-        descriptionLabel.setForeground(
-                SECONDARY_TEXT
-        );
+        JLabel descriptionLabel = new JLabel("<html>" + description + "</html>");
+        descriptionLabel.setFont(new Font("Arial", Font.PLAIN, 12));
+        descriptionLabel.setForeground(SECONDARY_TEXT);
 
         card.add(numberLabel);
         card.add(Box.createVerticalStrut(8));
@@ -712,88 +546,39 @@ public class StudentManagementSystem extends JFrame {
         return card;
     }
 
-    private void addScaleRow(
-            JPanel panel,
-            String grade,
-            String description
-    ) {
-
+    private void addScaleRow(JPanel panel, String grade, String description) {
         JLabel gradeLabel = new JLabel(grade);
-
-        gradeLabel.setFont(
-                new Font(
-                        "Arial",
-                        Font.BOLD,
-                        16
-                )
-        );
-
+        gradeLabel.setFont(new Font("Arial", Font.BOLD, 16));
         gradeLabel.setForeground(PRIMARY);
+        gradeLabel.setBorder(new EmptyBorder(15, 20, 15, 20));
 
-        gradeLabel.setBorder(
-                new EmptyBorder(
-                        15,
-                        20,
-                        15,
-                        20
-                )
-        );
-
-        JLabel descriptionLabel =
-                new JLabel(description);
-
-        descriptionLabel.setFont(
-                new Font(
-                        "Arial",
-                        Font.PLAIN,
-                        15
-                )
-        );
-
+        JLabel descriptionLabel = new JLabel(description);
+        descriptionLabel.setFont(new Font("Arial", Font.PLAIN, 15));
         descriptionLabel.setForeground(TEXT);
-
-        descriptionLabel.setBorder(
-                new EmptyBorder(
-                        15,
-                        20,
-                        15,
-                        20
-                )
-        );
+        descriptionLabel.setBorder(new EmptyBorder(15, 20, 15, 20));
 
         panel.add(gradeLabel);
         panel.add(descriptionLabel);
     }
 
     // REFRESH UI
-
     private void refreshUI() {
-
         contentPanel.revalidate();
         contentPanel.repaint();
     }
 
     // MAIN METHOD
-
     public static void main(String[] args) {
-
-        // Use Java's system look and feel
         try {
-
             UIManager.setLookAndFeel(
                     UIManager.getSystemLookAndFeelClassName()
             );
-
         } catch (Exception e) {
-
-            // Continue with default look and feel
+            // Fallback to default
         }
 
         SwingUtilities.invokeLater(() -> {
-
-            StudentManagementSystem app =
-                    new StudentManagementSystem();
-
+            StudentManagementSystem app = new StudentManagementSystem();
             app.setVisible(true);
         });
     }
