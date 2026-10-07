@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class StudentInformationUI extends JFrame {
+public class Students extends JFrame {
 
     // Input fields
     private JTextField txtFullName;
@@ -22,7 +22,7 @@ public class StudentInformationUI extends JFrame {
     // Output area
     private JTextArea txtOutput;
 
-    public StudentInformationUI() {
+    public Students() {
 
         // Window Configuration
         setTitle("Student Information System");
@@ -380,8 +380,8 @@ public class StudentInformationUI extends JFrame {
 
         SwingUtilities.invokeLater(() -> {
 
-            StudentInformationUI window =
-                    new StudentInformationUI();
+            Students window =
+                    new Students();
 
             window.setVisible(true);
         });

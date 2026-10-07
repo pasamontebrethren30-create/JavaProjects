@@ -6,10 +6,38 @@
     "configurations": [
         {
             "type": "java",
+            "name": "FACULTYBASIC",
+            "request": "launch",
+            "mainClass": "FACULTYBASIC",
+            "projectName": "JavaProjects_4661b547"
+        },
+        {
+            "type": "java",
+            "name": "FacultyManagementSystem",
+            "request": "launch",
+            "mainClass": "FacultyManagementSystem",
+            "projectName": "JavaProjects_4661b547"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}",
+            "vmArgs": "--module-path \"C:/Users/Brethren Pasamonte/Downloads/openjfx-26.0.1_windows-x64_bin-sdk/javafx-sdk-26.0.1/lib\" --add-modules javafx.controls,javafx.fxml --enable-native-access=javafx.graphics"
+        },
+        {
+            "type": "java",
+            "name": "Students",
+            "request": "launch",
+            "mainClass": "Students",
+            "projectName": "JavaProjects_4661b547"
+        },
+        {
+            "type": "java",
             "name": "StudentInformation",
             "request": "launch",
             "mainClass": "StudentInformation",
-            "projectName": "JavaProjects_4661b547"
+            "vmArgs": "--module-path \"C:/Users/Brethren Pasamonte/Downloads/openjfx-26.0.1_windows-x64_bin-sdk/javafx-sdk-26.0.1/lib\" --add-modules javafx.controls,javafx.fxml --enable-native-access=javafx.graphics"
         },
         {
             "type": "java",
