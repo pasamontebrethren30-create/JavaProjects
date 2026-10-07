@@ -1024,7 +1024,7 @@ public class FacultyManagementSystem extends Application {
                 createTextField();
 
         idField.setPromptText(
-                "Example: FAC001"
+                "Example: 26-01234"
         );
 
         Label experienceLabel =
