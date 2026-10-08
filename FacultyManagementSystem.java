@@ -980,7 +980,7 @@ public class FacultyManagementSystem extends Application {
 
         Label subtitle =
                 new Label(
-                        "Check faculty eligibility using logical conditions."
+                        "Checking the faculty's eligibility."
                 );
 
         subtitle.setFont(
@@ -1215,7 +1215,7 @@ public class FacultyManagementSystem extends Application {
         VBox panel = new VBox();
 
         Label title =
-                new Label("Faculty Grading Scale");
+                new Label("Grading Scale");
 
         title.setFont(
                 Font.font(
