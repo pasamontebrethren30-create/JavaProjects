@@ -314,7 +314,7 @@ public class FacultyManagementSystem extends Application {
         VBox statusCard = createInfoCard(
                 "03",
                 "Faculty Status",
-                "Check faculty status using logical conditions."
+                "Checking the faculty's eligibility."
         );
 
         HBox.setHgrow(
