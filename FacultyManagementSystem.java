@@ -1124,11 +1124,31 @@ public class FacultyManagementSystem extends Application {
                         Integer.parseInt(experienceInput);
 
                 // =================================================
+                // INPUT VALIDATION
+                // =================================================
+
+                if (!facultyID.matches("\\d{2}-\\d{5}")) {
+                    showError(
+                            "Invalid Faculty ID",
+                            "Faculty ID must follow this format: 26-01234"
+                    );
+                    return;
+                }
+
+                if (years < 0) {
+                    showError(
+                            "Invalid Input",
+                            "Years of experience cannot be negative."
+                    );
+                    return;
+                }
+
+                // =================================================
                 // RELATIONAL OPERATORS
                 // =================================================
 
                 boolean validID =
-                        !facultyID.equalsIgnoreCase("NONE");
+                        facultyID.matches("\\d{2}-\\d{5}");
 
                 boolean experienced =
                         years >= 3;
