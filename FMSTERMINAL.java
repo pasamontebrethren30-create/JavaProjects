@@ -6,9 +6,9 @@ public class FMSTERMINAL {
 
     public static void main(String[] args) {
         while (true) {
-            System.out.println("\n========================================");
-            System.out.println("       FACULTY MANAGEMENT SYSTEM");
-            System.out.println("========================================");
+            System.out.println("\n");
+            System.out.println(" FACULTY MANAGEMENT SYSTEM");
+            System.out.println("");
             System.out.println("1. Grade Evaluator");
             System.out.println("2. Workload Calculator");
             System.out.println("3. Faculty Status");
