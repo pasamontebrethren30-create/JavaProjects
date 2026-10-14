@@ -223,26 +223,78 @@ public class FacultyManagementSystem extends Application {
         // ---------------------------------------------------------
         // BUTTON ACTIONS
         // ---------------------------------------------------------
+        // MODIFIED: Navigation now uses a switch statement.
+        // ---------------------------------------------------------
 
         gradeButton.setOnAction(
-                event -> showGradeEvaluator()
+                event -> navigate("grade")
         );
 
         workloadButton.setOnAction(
-                event -> showWorkloadCalculator()
+                event -> navigate("workload")
         );
 
         statusButton.setOnAction(
-                event -> showFacultyStatus()
+                event -> navigate("status")
         );
 
         scaleButton.setOnAction(
-                event -> showGradingScale()
+                event -> navigate("scale")
         );
 
         exitButton.setOnAction(
-                event -> confirmExit()
+                event -> navigate("exit")
         );
+    }
+
+    // =========================================================
+    // SWITCH STATEMENT FOR NAVIGATION
+    // =========================================================
+
+    private void navigate(String destination) {
+
+        switch (destination) {
+
+            case "grade":
+
+                showGradeEvaluator();
+
+                // BREAK: Stops execution of this switch case.
+                break;
+
+            case "workload":
+
+                showWorkloadCalculator();
+
+                break;
+
+            case "status":
+
+                showFacultyStatus();
+
+                break;
+
+            case "scale":
+
+                showGradingScale();
+
+                break;
+
+            case "exit":
+
+                confirmExit();
+
+                break;
+
+            default:
+
+                showError(
+                        "Navigation Error",
+                        "The selected page does not exist."
+                );
+
+                break;
+        }
     }
 
     // =========================================================
@@ -1118,28 +1170,36 @@ public class FacultyManagementSystem extends Application {
                 return;
             }
 
+            // =================================================
+            // INPUT VALIDATION
+            // =================================================
+
+            // NOT (!) reverses the result of matches().
+            // The ID must have exactly 2 digits, a hyphen,
+            // and 5 digits, such as 26-01234.
+
+            if (!facultyID.matches("\\d{2}-\\d{5}")) {
+
+                showError(
+                        "Invalid Faculty ID",
+                        "Faculty ID must follow this format: 26-01234"
+                );
+
+                return;
+            }
+
             try {
 
                 int years =
                         Integer.parseInt(experienceInput);
 
-                // =================================================
-                // INPUT VALIDATION
-                // =================================================
-
-                if (!facultyID.matches("\\d{2}-\\d{5}")) {
-                    showError(
-                            "Invalid Faculty ID",
-                            "Faculty ID must follow this format: 26-01234"
-                    );
-                    return;
-                }
-
                 if (years < 0) {
+
                     showError(
                             "Invalid Input",
                             "Years of experience cannot be negative."
                     );
+
                     return;
                 }
 
@@ -1160,17 +1220,22 @@ public class FacultyManagementSystem extends Application {
                 // LOGICAL OPERATORS
                 // =================================================
 
-                // AND (&&)
+                // AND (&&): both conditions must be true.
                 boolean regularFaculty =
                         validID && experienced;
 
-                // OR (||)
+                // OR (||): at least one condition must be true.
+                // An ID is checked above before this point.
                 boolean eligibleForOrientation =
                         newFaculty || !validID;
 
-                // NOT (!)
+                // NOT (!): reverses the boolean value.
                 boolean notNewFaculty =
                         !newFaculty;
+
+                // =================================================
+                // CONDITIONAL STATEMENTS
+                // =================================================
 
                 if (regularFaculty) {
 
@@ -1196,7 +1261,8 @@ public class FacultyManagementSystem extends Application {
                     resultLabel.setText(
                             "FACULTY STATUS: ORIENTATION REQUIRED\n\n"
                             + "The faculty member may need orientation "
-                            + "because they are new or their ID needs verification."
+                            + "because they have less than 3 years "
+                            + "of experience."
                     );
 
                 } else {
@@ -1358,10 +1424,23 @@ public class FacultyManagementSystem extends Application {
         };
 
         // =====================================================
-        // LOOP
+        // LOOP AND CONTINUE
         // =====================================================
 
         for (int i = 0; i < gradingScale.length; i++) {
+
+            // CONTINUE: skips an incomplete row and proceeds
+            // to the next item in the grading-scale array.
+
+            if (gradingScale[i] == null
+                    || gradingScale[i].length < 2
+                    || gradingScale[i][0] == null
+                    || gradingScale[i][1] == null
+                    || gradingScale[i][0].trim().isEmpty()
+                    || gradingScale[i][1].trim().isEmpty()) {
+
+                continue;
+            }
 
             addScaleRow(
                     scaleCard,
@@ -1546,8 +1625,7 @@ public class FacultyManagementSystem extends Application {
 
         return field;
     }
-
-    // =========================================================
+ // =========================================================
     // WHITE PANEL
     // =========================================================
 
