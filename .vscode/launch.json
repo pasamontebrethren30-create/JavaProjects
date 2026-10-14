@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Facultymanagementsysteem",
+            "request": "launch",
+            "mainClass": "Facultymanagementsysteem",
+            "projectName": "JavaProjects_4661b547"
+        },
+        {
+            "type": "java",
             "name": "ActivityInArray",
             "request": "launch",
             "mainClass": "ActivityInArray",
