@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ActivityInArray",
+            "request": "launch",
+            "mainClass": "ActivityInArray",
+            "projectName": "JavaProjects_4661b547"
+        },
+        {
+            "type": "java",
+            "name": "TaskA_1DArray",
+            "request": "launch",
+            "mainClass": "TaskA_1DArray",
+            "projectName": "JavaProjects_4661b547"
+        },
+        {
+            "type": "java",
             "name": "FMSTERMINAL",
             "request": "launch",
             "mainClass": "FMSTERMINAL",
