@@ -22,9 +22,7 @@ import java.util.Optional;
 
 public class FacultyManagementSystem extends Application {
 
-    // =========================================================
     // COLORS
-    // =========================================================
 
     private static final String BACKGROUND = "#F5F7FA";
     private static final String CARD = "#FFFFFF";
@@ -38,16 +36,12 @@ public class FacultyManagementSystem extends Application {
     private static final String SIDEBAR = "#111827";
     private static final String SIDEBAR_HOVER = "#1F2937";
 
-    // =========================================================
     // MAIN LAYOUT
-    // =========================================================
-
     private BorderPane mainLayout;
     private VBox contentPanel;
 
-    // =========================================================
+    
     // START PROGRAM
-    // =========================================================
 
     @Override
     public void start(Stage stage) {
@@ -76,15 +70,13 @@ public class FacultyManagementSystem extends Application {
         stage.show();
     }
 
-    // =========================================================
+    
     // MAIN UI
-    // =========================================================
 
     private void createMainUI() {
 
-        // ---------------------------------------------------------
+        
         // SIDEBAR
-        // ---------------------------------------------------------
 
         VBox sidebar = new VBox();
 
@@ -201,9 +193,8 @@ public class FacultyManagementSystem extends Application {
 
         sidebar.getChildren().add(exitButton);
 
-        // ---------------------------------------------------------
+        
         // CONTENT
-        // ---------------------------------------------------------
 
         contentPanel = new VBox();
 
@@ -220,11 +211,10 @@ public class FacultyManagementSystem extends Application {
 
         showDashboard();
 
-        // ---------------------------------------------------------
+        
         // BUTTON ACTIONS
-        // ---------------------------------------------------------
-        // MODIFIED: Navigation now uses a switch statement.
-        // ---------------------------------------------------------
+        
+        // Navigation now uses a switch statement.
 
         gradeButton.setOnAction(
                 event -> navigate("grade")
@@ -247,9 +237,9 @@ public class FacultyManagementSystem extends Application {
         );
     }
 
-    // =========================================================
+    
     // SWITCH STATEMENT FOR NAVIGATION
-    // =========================================================
+
 
     private void navigate(String destination) {
 
@@ -297,9 +287,7 @@ public class FacultyManagementSystem extends Application {
         }
     }
 
-    // =========================================================
     // DASHBOARD
-    // =========================================================
 
     private void showDashboard() {
 
@@ -438,9 +426,8 @@ public class FacultyManagementSystem extends Application {
         contentPanel.getChildren().add(dashboard);
     }
 
-    // =========================================================
+    
     // GRADE EVALUATOR
-    // =========================================================
 
     private void showGradeEvaluator() {
 
@@ -569,9 +556,8 @@ public class FacultyManagementSystem extends Application {
                 double grade =
                         Double.parseDouble(input);
 
-                // =================================================
+                
                 // RELATIONAL OPERATORS
-                // =================================================
 
                 if (grade < 0 || grade > 100) {
 
@@ -589,9 +575,8 @@ public class FacultyManagementSystem extends Application {
                 double rating;
                 String description;
 
-                // =================================================
+               
                 // LOGICAL OPERATOR &&
-                // =================================================
 
                 if (grade >= 98 && grade <= 100) {
 
@@ -644,9 +629,7 @@ public class FacultyManagementSystem extends Application {
                     description = "Failed";
                 }
 
-                // =================================================
                 // RELATIONAL + LOGICAL OPERATORS
-                // =================================================
 
                 boolean passed =
                         rating <= 3.00;
@@ -695,9 +678,7 @@ public class FacultyManagementSystem extends Application {
         contentPanel.getChildren().add(panel);
     }
 
-    // =========================================================
     // WORKLOAD CALCULATOR
-    // =========================================================
 
     private void showWorkloadCalculator() {
 
@@ -872,9 +853,7 @@ public class FacultyManagementSystem extends Application {
                 double hours =
                         Double.parseDouble(hoursInput);
 
-                // =================================================
                 // RELATIONAL OPERATORS
-                // =================================================
 
                 if (classes <= 0 || hours <= 0) {
 
@@ -886,9 +865,7 @@ public class FacultyManagementSystem extends Application {
                     return;
                 }
 
-                // =================================================
                 // ARITHMETIC OPERATORS
-                // =================================================
 
                 // Multiplication (*)
                 double totalHours =
@@ -910,9 +887,7 @@ public class FacultyManagementSystem extends Application {
                 int remainder =
                         classes % 2;
 
-                // =================================================
                 // RELATIONAL + LOGICAL OPERATORS
-                // =================================================
 
                 String classType;
 
@@ -1005,9 +980,8 @@ public class FacultyManagementSystem extends Application {
         contentPanel.getChildren().add(panel);
     }
 
-    // =========================================================
+
     // FACULTY STATUS
-    // =========================================================
 
     private void showFacultyStatus() {
 
@@ -1170,10 +1144,7 @@ public class FacultyManagementSystem extends Application {
                 return;
             }
 
-            // =================================================
             // INPUT VALIDATION
-            // =================================================
-
             // NOT (!) reverses the result of matches().
             // The ID must have exactly 2 digits, a hyphen,
             // and 5 digits, such as 26-01234.
@@ -1203,9 +1174,7 @@ public class FacultyManagementSystem extends Application {
                     return;
                 }
 
-                // =================================================
                 // RELATIONAL OPERATORS
-                // =================================================
 
                 boolean validID =
                         facultyID.matches("\\d{2}-\\d{5}");
@@ -1216,9 +1185,8 @@ public class FacultyManagementSystem extends Application {
                 boolean newFaculty =
                         years < 3;
 
-                // =================================================
+
                 // LOGICAL OPERATORS
-                // =================================================
 
                 // AND (&&): both conditions must be true.
                 boolean regularFaculty =
@@ -1233,9 +1201,7 @@ public class FacultyManagementSystem extends Application {
                 boolean notNewFaculty =
                         !newFaculty;
 
-                // =================================================
                 // CONDITIONAL STATEMENTS
-                // =================================================
 
                 if (regularFaculty) {
 
@@ -1290,9 +1256,7 @@ public class FacultyManagementSystem extends Application {
         contentPanel.getChildren().add(panel);
     }
 
-    // =========================================================
     // GRADING SCALE
-    // =========================================================
 
     private void showGradingScale() {
 
@@ -1343,9 +1307,7 @@ public class FacultyManagementSystem extends Application {
         VBox scaleCard =
                 createWhitePanel();
 
-        // =====================================================
         // TABLE HEADER
-        // =====================================================
 
         HBox header =
                 new HBox();
@@ -1404,9 +1366,7 @@ public class FacultyManagementSystem extends Application {
                 createSpacer(5)
         );
 
-        // =====================================================
         // GRADING SCALE DATA
-        // =====================================================
 
         String[][] gradingScale = {
 
@@ -1423,9 +1383,7 @@ public class FacultyManagementSystem extends Application {
 
         };
 
-        // =====================================================
         // LOOP AND CONTINUE
-        // =====================================================
 
         for (int i = 0; i < gradingScale.length; i++) {
 
@@ -1454,9 +1412,7 @@ public class FacultyManagementSystem extends Application {
         contentPanel.getChildren().add(panel);
     }
 
-    // =========================================================
     // SIDEBAR BUTTON
-    // =========================================================
 
     private Button createSidebarButton(
             String text) {
@@ -1525,9 +1481,7 @@ public class FacultyManagementSystem extends Application {
         );
     }
 
-    // =========================================================
     // PRIMARY BUTTON
-    // =========================================================
 
     private Button createPrimaryButton(
             String text) {
@@ -1593,9 +1547,7 @@ public class FacultyManagementSystem extends Application {
         );
     }
 
-    // =========================================================
     // TEXT FIELD
-    // =========================================================
 
     private TextField createTextField() {
 
@@ -1625,9 +1577,8 @@ public class FacultyManagementSystem extends Application {
 
         return field;
     }
- // =========================================================
+
     // WHITE PANEL
-    // =========================================================
 
     private VBox createWhitePanel() {
 
@@ -1657,9 +1608,7 @@ public class FacultyManagementSystem extends Application {
         return panel;
     }
 
-    // =========================================================
     // INFORMATION CARD
-    // =========================================================
 
     private VBox createInfoCard(
             String number,
@@ -1729,9 +1678,7 @@ public class FacultyManagementSystem extends Application {
         return card;
     }
 
-    // =========================================================
     // GRADING SCALE ROW
-    // =========================================================
 
     private void addScaleRow(
             VBox panel,
@@ -1792,9 +1739,7 @@ public class FacultyManagementSystem extends Application {
         panel.getChildren().add(row);
     }
 
-    // =========================================================
     // SPACER
-    // =========================================================
 
     private Region createSpacer(
             double height) {
@@ -1809,9 +1754,7 @@ public class FacultyManagementSystem extends Application {
         return spacer;
     }
 
-    // =========================================================
     // ERROR MESSAGE
-    // =========================================================
 
     private void showError(
             String title,
@@ -1829,9 +1772,7 @@ public class FacultyManagementSystem extends Application {
         alert.showAndWait();
     }
 
-    // =========================================================
     // EXIT CONFIRMATION
-    // =========================================================
 
     private void confirmExit() {
 
@@ -1856,9 +1797,7 @@ public class FacultyManagementSystem extends Application {
         }
     }
 
-    // =========================================================
     // MAIN METHOD
-    // =========================================================
 
     public static void main(String[] args) {
 
